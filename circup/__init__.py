@@ -525,6 +525,7 @@ def extract_metadata(path):
         mpy_version = content[0:2]
         compatibility = None
         # Find the start location of the __version__
+        loc = 0
         if mpy_version == b"M\x03":
             # One byte for the length of "__version__"
             loc = content.find(b"__version__") - 1
